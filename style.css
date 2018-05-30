@@ -25,6 +25,7 @@
 }
 #socialMedia li {
     display: inline-block;
+    margin-bottom: -10px;
 }
 .anchor {
     display: block;
