@@ -11,7 +11,7 @@
     background-color: transparent;
     text-align: center;
     top: 30%;
-    left: 43%;
+    left: 42%;
     color: black;
 }
 #main-title .thin {
@@ -44,6 +44,7 @@
     top: 0;
     width: 100%;
     z-index: 3;
+    
 }
 @keyframes LinearGradient {
     0% { background-position: 0% 30%;}
@@ -51,8 +52,6 @@
     60% { background-position: 60% 90%}
     100% {background-position: 90% 0%}
 }
-
-/* Links inside the navbar */
 .navbar a {
     float: left;
     display: block;
@@ -60,9 +59,10 @@
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    -webkit-transition: background 0.3s ease-in-out;
+    transition: background 0.3s ease-in-out;  
 }
 
-/* Change background on mouse-over */
 .navbar a:hover {
     background: #ddd;
     color: black;
