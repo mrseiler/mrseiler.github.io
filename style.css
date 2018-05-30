@@ -1,4 +1,128 @@
-canvas {
-    border: 1px solid black;
-    margin: 0;
+#myCanvas {
+    opacity: .8;
+}
+#interactiveHeader {
+    width: 100%;
+    height: auto;
+    background-color: darkgray;
+}
+#mainTitle {
+    position: absolute;
+    background-color: transparent;
+    text-align: center;
+    top: 30%;
+    left: 43%;
+}
+#main-title .thin {
+	font-weight: 200;
+	line-height: 1.5em;
+}
+
+#main-title .subtitle {
+	font-size: 0.5em;
+	font-weight: 200;
+}
+.anchor {
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    z-index: -1;
+    top: -40px;
+    left: 0;
+    visibility: hidden;
+}
+/*======================
+--------Navbar----------
+======================*/
+.navbar {
+    overflow: hidden;
+    background: linear-gradient(132deg, #FB6542, #FFBB00, #3F681C, #375E97);
+    animation: LinearGradient 30s ease infinite;
+    position: fixed; 
+    top: 0;
+    width: 100%;
+}
+@keyframes LinearGradient {
+    0% { background-position: 0% 30%;}
+    30% { background-position: 30% 60%}
+    60% { background-position: 60% 90%}
+    100% {background-position: 90% 0%}
+}
+
+/* Links inside the navbar */
+.navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change background on mouse-over */
+.navbar a:hover {
+    background: #ddd;
+    color: black;
+}
+
+/* Main content */
+.main {
+    margin-top: 30px; /* Add a top margin to avoid content overlay */
+}
+/*=========================
+----------ABOUT-ME--------
+=========================*/
+#about {
+    background-color: #FB6542;
+}
+
+#about h1 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+#about p {
+    display: inline-block;
+    width: 200px;
+}
+#about img{
+    background-color: #FB6542;
+}
+
+/*=========================
+--------PROFILE-----------
+=========================*/
+#profile {
+    background-color: #FFBB00;
+    height: 600px;
+}
+
+/*==========================
+---------PORTFOLIO----------
+==========================*/
+#portfolio {
+    background-color: #3F681C;
+    height: 600px;
+}
+
+/*==========================
+-----------CONTACT---------
+==========================*/
+#contact {
+    background-color: #375E97;
+    padding-bottom: 200px;
+}
+#contactBreak {
+    color: white;
+}
+#contact h1 {
+    text-align: center;
+}
+form .submit {
+    color: black;
+}
+form .submit:hover {
+    background-color:red;
+    color: white;
 }

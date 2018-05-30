@@ -1,87 +1,147 @@
-var canvas = document.querySelector('canvas');
+const canvas = document.getElementById('myCanvas')
+const c = canvas.getContext('2d')
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+let mouseX
+let mouseY
 
-var c = canvas.getContext('2d');
+canvas.height = window.innerHeight
+canvas.width = window.innerWidth
 
-/*
-c.fillStyle = 'rgba(255, 0, 0, 0.5)';
-c.fillRect(100, 100, 100, 100);
-c.fillStyle = 'rgba(0, 255, 0, 0.5)';
-c.fillRect(400, 100, 100, 100);
-c.fillStyle = 'rgba(0, 0, 255, 0.5)';
-c.fillRect(300, 300, 100, 100);
+const canvasWidth = canvas.width
+const canvasHeight = canvas.height
 
-c.beginPath();
-c.moveTo(50, 300);
-c.lineTo(300, 100);
-c.lineTo(400, 300);
-c.strokeStyle = '#fa34a3';
-c.stroke();
+const maxRadius = 35
 
-for(var i =0; 1 < 100; i++) {
-    var x = Math.random() * window.innerWidth;
-    var y = Math.random() * window.innerHeight;
-    
-    c.beginPath();
-    c.arc(x, y, 30, 0, Math.PI * 2, false);
-    c.strokeStyle = 'blue';
-    c.stroke();
-} */
+canvas.onmousemove = function(e) {
+    mouseX = e.clientX
+    mouseY = e.clientY
+}
 
-    window.addEventListener('mousemove', 
-        function(event) {
-        
-        })
+window.addEventListener('resize', function() {
+    canvas.width = window.innerWidth
+    canvas.height = window.innerHeight
+})
 
-    function circle(x, y, dx, dy, radius){
-        this.x = x;
-        this.y = y;
-        this.dx = dx;
-        this.dy = dy;
-        this.radius = radius;
+function Circle(xCoordinate, yCoordinate, radius) {
+    const randomNumber = Math.floor(Math.random() * 4)
+    const randomTrueOrFalse = Math.floor(Math.random() * 2)
 
-        this.draw = function() {
-            c.beginPath();
-            c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
-            c.strokeStyle = 'blue';
-            c.stroke();
-            c.fill();
-        }
-        this.update = function() {
-            if (this.x + this.radius > innerWidth || this.x - this.radius < 0) {
-                this.dx = -this.dx;
-            }
-            if (this.y + this.radius > innerHeight || this.y - this.radius < 0) {
-                this.dy = -this.dy;
-            }
-            this.x += this.dx;
-            this.y += this.dy;
+    this.xCoordinate = xCoordinate
+    this.yCoordinate = yCoordinate
+    this.radius = radius
+    this.color = colorArray[randomNumber]
 
-            this.draw();
-        }
+    if (randomTrueOrFalse == 1) {
+        this.xVelocity = -Math.random() * 1
+    } else {
+        this.xVelocity = Math.random() * 1
     }
 
-    var cirlceArray = [];
-
-    for(var i = 0; i < 100; i++) {
-        var x = Math.random() * innerWidth;
-        var y = Math.random() * innerHeight;
-        var dx = (Math.random() - 0.5) * 8;
-        var dy = (Math.random() - 0.5) * 8;
-        var radius = 30;
-        cirlceArray.push(new circle(x, y, dx, dy, radius));
+    if (randomTrueOrFalse == 1) {
+        this.yVelocity = -Math.random() * 1
+    } else {
+        this.yVelocity = Math.random() * 1
     }
-    console.log(circleArray);
 
-    function animate() {
-        requestAnimationFrame(animate);
-        c.clearRect(0, 0, innerWidth, innerHeight);
+    // As distance gets closer to 0, increase radius
 
-        for(var i = 0; i < circleArray.length; i++) {
-            circleArray[i].update();
+    this.update = function() {
+        this.xCoordinate += this.xVelocity
+        const xDistance = mouseX - this.xCoordinate
+        const yDistance = mouseY - this.yCoordinate
+        const originalRadius = radius
+        this.yCoordinate += this.yVelocity
+
+        // Movement Functions
+        if (
+            this.xCoordinate + this.radius > canvasWidth ||
+            this.xCoordinate - this.radius < 0
+        ) {
+            this.xVelocity = -this.xVelocity
         }
+        if (
+            this.yCoordinate + this.radius > canvasHeight ||
+            this.yCoordinate - this.radius < 0
+        ) {
+            this.yVelocity = -this.yVelocity
+        }
+
+        // Radius Decrease Functions
+        // When distance between circle center and mouse on horizontal axis is less than 50, increase radius until it is equal to 35
+        if (
+            xDistance < 50 &&
+            xDistance > -50 &&
+            this.radius < maxRadius &&
+            yDistance < 50 &&
+            yDistance > -50
+        ) {
+            this.radius += 2
+        } else if (
+            (xDistance >= 50 && originalRadius < this.radius) ||
+            (xDistance <= -50 && originalRadius < this.radius) ||
+            (yDistance >= 50 && originalRadius < this.radius) ||
+            (yDistance <= -50 && originalRadius < this.radius)
+        ) {
+            this.radius -= 2
+        }
+
+        this.draw()
     }
 
-    animate();
+    this.draw = function() {
+        c.beginPath()
+        c.arc(
+            this.xCoordinate,
+            this.yCoordinate,
+            Math.abs(this.radius),
+            0,
+            Math.PI * 2
+        )
+        c.fillStyle = this.color
+        c.fill()
+    }
+}
+
+const colorArray = ['#375E97', '#FB6542', '#FFBB00', '#3F681C']
+const myCircle = new Circle(30, 80, 10)
+let circleArray = []
+
+for (let i = 0; i < 800; i++) {
+    const randomXCoordinate = Math.random() * canvasWidth
+    const randomYCoordinate = Math.random() * canvasHeight
+    const randomRadius = Math.random() * 5
+    circleArray.push(
+        new Circle(randomXCoordinate, randomYCoordinate, randomRadius)
+    )
+}
+
+function updateAll() {
+    c.clearRect(0, 0, canvasWidth, canvasHeight)
+    myCircle.update()
+    for (let i = 0; i < circleArray.length; i++) {
+        circleArray[i].update()
+    }
+    window.requestAnimationFrame(updateAll)
+}
+
+updateAll()
+
+/*------navbar---------*/
+
+// When the user scrolls the page, execute myFunction 
+window.onscroll = function() {myFunction()};
+
+// Get the navbar
+var navbar = document.getElementById("navBar");
+
+// Get the offset position of the navbar
+var sticky = navbar.offsetTop;
+
+// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
