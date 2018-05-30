@@ -12,6 +12,7 @@
     text-align: center;
     top: 30%;
     left: 43%;
+    color: black;
 }
 #main-title .thin {
 	font-weight: 200;
@@ -42,6 +43,7 @@
     position: fixed; 
     top: 0;
     width: 100%;
+    z-index: 3;
 }
 @keyframes LinearGradient {
     0% { background-position: 0% 30%;}
@@ -75,19 +77,24 @@
 =========================*/
 #about {
     background-color: #FB6542;
+    color: black;
+    padding-bottom: 30px;
 }
 
 #about h1 {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-#about p {
-    display: inline-block;
-    width: 200px;
+    text-align: center;
 }
 #about img{
     background-color: #FB6542;
+    margin-left: auto;
+    margin-right: auto;
+    align-content: center;
+}
+#aboutbreak {
+    color: white;
+}
+#about p{
+    font-size: 18px;
 }
 
 /*=========================
@@ -95,7 +102,14 @@
 =========================*/
 #profile {
     background-color: #FFBB00;
-    height: 600px;
+    color: black;
+}
+#profile h1 {
+    text-align: center;
+}
+#profile li {
+    display: inline-block;
+    padding-right: 10px;
 }
 
 /*==========================
@@ -103,7 +117,32 @@
 ==========================*/
 #portfolio {
     background-color: #3F681C;
-    height: 600px;
+    color: black;
+    height: 900px;
+}
+#portfolio h1 {
+    text-align: center;
+}
+#portfolio h3 {
+    text-align: center;
+}
+#portfolioBlocks {
+    height: 150px;
+}
+#portfolio img {
+    width: 100%;
+    opacity: .7;
+    border: 1px solid black;
+    border-radius: 40px;
+}
+#portfolio p {
+    margin-bottom: 40px;
+    text-align: center;
+    color: black;
+}
+#portfolio img:hover {
+    opacity: 1;
+    border-radius: 0;
 }
 
 /*==========================
@@ -111,7 +150,8 @@
 ==========================*/
 #contact {
     background-color: #375E97;
-    padding-bottom: 200px;
+    padding-bottom: 100px;
+    color: black;
 }
 #contactBreak {
     color: white;
@@ -125,4 +165,17 @@ form .submit {
 form .submit:hover {
     background-color:red;
     color: white;
+}
+#contactInfo {
+    position: absolute;
+    display: inline-block;
+}
+/*========================
+----------FOOTER---------
+=======================*/
+footer {
+    background-color: darkgray;
+    color: black;
+    text-align: center;
+    height: 80px;
 }

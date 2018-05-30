@@ -42,27 +42,117 @@
             </div>
         </div>
     </nav> 
+
     <section id="about">
         <div class="container-fluid">
-            <h1>About me</h1>
-            <p>Hello World! My name is Mason Seiler and I am a junior web developer.
-                I am passionate about coding and plan on coming a full-stack developer
-                as my career progresses. Below you will find what accomplishments I have
-                achieved throughout my life as well as any other exciting milestones.
-            </p>
-            <img src="./assets/soccerBall.png" width="200" height="200">
+            <div class="row">
+                <div class="col-sm-3">
+
+                </div>
+                <div class="col-sm-6">
+                    <h1>About me</h1>
+                    <hr id="aboutBreak">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-2">
+                    <img src="./assets/soccerBall.png" width="200" height="200">
+                </div>
+                <div class="col-sm-6">
+                    <p><b>Hello World!</b> My name is Mason Seiler and I am a junior web developer.
+                        I am passionate about coding and plan on becoming a fullstack developer
+                        as my career progresses. I have played soccer my whole life at a very
+                        competitive level and my love for the game continues to this day. I am
+                         a proud Alumni of Theta Chi Fraternity, Delta Kappa Chapter. I also have a very energetic 
+                        dog named Reuben who always keeps me on my toes.
+                    </p>
+                </div>
+                <div class"col-sm-3">
+                    <img src="./assets/thetaChi.png" width="200" height="200">
+                </div>
+            </div>
         </div>
     </section>
+
     <section id="profile">
         <div class="container-fluid">
             <h1>Profile</h1>
+            <div class="row">
+                <div class="col-sm-3">
+                    <img src="./assets/headshot.png" height="200" width="200">
+                </div>
+                <div class="col-sm-9">
+                    <h3>Background</h3>
+                    <p>I graduated Ball State University with a Bachelors degree in Computer
+                        Information Systems and a minor in Computer Science. I am currently
+                        attending Eleven Fifty Academy, a 12-week intensive training JavaScript
+                        course, to pursue my dream of becoming a programmer, and ultimately a 
+                        fullstack developer. I have worked with Do It Best, a well-known company
+                        that sells hardware supplies and tools, to help them fix a broken process
+                        of how the headquarters works with the individually-owned store members as 
+                        a consultant. I also have experience coding on arduinos with a 
+                        family-owned escape rooms on the east side of Indy, called Twisted Room Escapes,
+                        where I help program some of the electrical outputs through an arduino 
+                        that are used in the game rooms.
+                    </p>
+                    <br>
+                    <h3>Skills</h3>
+                        <ul>
+                            <li><img src="./assets/htmlIcon.png" width="100" height="100"></li>
+                            <li><img src="./assets/cssIcon.png" width="70" height="100"></li>
+                            <li><img src="./assets/javascriptIcon.png" width="100" height="90"></li>
+                            <li><img src="./assets/jsNodeIcon.png" width="80" height="80"></li>
+                            <li><img src="./assets/githubIcon.png" width="80" height="80"></li>
+                            <li><img src="./assets/javaIcon.png" width="80" height="80"></li>
+                            <li><img src="./assets/swiftIcon.png" width="80" height="80"></li>
+                        </ul>
+                </div>
+            </div>
         </div>
     </section>
+
     <section id="portfolio">
         <div class="container-fluid">
-            <h1>Portfolio</h1>
+            <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                    <h1>Portfolio</h1>
+                    <hr>
+                </div>
+            </div>
+            <h3>Completed Works</h3>
+            <br>
+            <div class="row">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-4" id="portfolioBlocks">
+                    <a href= "https://codepen.io/mrseiler/pen/RyBLjy" id="squid">
+                        <img src="./assets/codepen.png" height="300"></a>
+                        <p>Used code pen to create a simple monster using CSS</p>
+
+                    <a href="https://mrseiler.github.io/pokemonAPI/" id="api">
+                        <img src="./assets/pokemonAPI.png" height="300"></a>
+                        <p>Took information from a pokemon API to create a searchable
+                             Pokedex for any pokemon
+                        </p>
+                </div>
+                <div class="col-sm-2"></div>
+                <div class="col-sm-4" id="portfolioBlocks">
+                    <a href="https://mrseiler.github.io/storeFront/" id="storefront">
+                        <img src="./assets/storefront.png" height="300"></a>
+                        <p>Created a store front website selling pokemon plushies</p>
+
+                    <a href="http://www.ballstatemenssoccer.com/" id="ballstateSoccer">
+                        <img src="./assets/ballstateSoccer.png" height="300"></a>
+                        <p>Created an informative and interactive website for the 
+                            Ball State Men's Soccer Club during my time there
+                        </p>
+                </div>
+                <div class="col-sm-1"></div>
+            </div>
         </div>
     </section>
+
     <section id="contact">
         <div class="container-fluid">
             <div class="row">
@@ -82,9 +172,16 @@
                         </form>
                     </div>
                 </div>
+                <div class="col-md-offset-0 col-md-2" id="contactInfo">
+                </div>
             </div>
         </div>
     </section>
+
+    <footer id="footerSection">
+        <p>Copyright &copy; 2018 - Mason Seiler</p>
+            
+    </footer>
 
 
 
