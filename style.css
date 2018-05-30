@@ -127,7 +127,7 @@
 #portfolio {
     background-color: #3F681C;
     color: black;
-    height: 1000px;
+    height: 1050px;
 }
 #portfolio h1 {
     text-align: center;
@@ -138,6 +138,9 @@
 }
 #portfolioBlocks {
     height: 150px;
+}
+#portfolioBlocks h2 {
+    text-align: center;
 }
 #portfolio img {
     width: 100%;

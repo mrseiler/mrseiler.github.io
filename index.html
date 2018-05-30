@@ -31,7 +31,7 @@
         <div class="container-fluid">
             <div class="collapse navbar-collapse" id="navBar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#interactiveHeader"><i class="ion-home"></i></a></li>
+                    <li><a href="#interactiveHeader"><img src="./assets/home.svg" height="20"><i class="ion-home"></i></a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#profile">Profile</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
@@ -77,7 +77,13 @@
 
     <section id="profile">
         <div class="container-fluid">
-            <h1>Profile</h1>
+            <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                    <h1>Profile</h1>
+                    <hr>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-sm-3">
                     <img src="./assets/headshot.png" height="200" width="200">
@@ -129,10 +135,12 @@
             <div class="row">
                 <div class="col-sm-1"></div>
                 <div class="col-sm-4" id="portfolioBlocks">
+                    <h2>CSS Creature</h2>
                     <a href= "https://codepen.io/mrseiler/pen/RyBLjy" target ="_blank" id="squid">
                         <img src="./assets/codepen.png" height="300"></a>
                         <p>Used code pen to create a simple monster using CSS</p>
-
+                    
+                    <h2>Pokemon API</h2>
                     <a href="https://pokemonapi-8bbb0.firebaseapp.com/" target ="_blank" id="api">
                         <img src="./assets/pokemonAPI.png" height="300"></a>
                         <p>Took information from a pokemon API to create a searchable
@@ -141,10 +149,11 @@
                 </div>
                 <div class="col-sm-2"></div>
                 <div class="col-sm-4" id="portfolioBlocks">
+                    <h2>Storefront Website</h2>
                     <a href="https://mrseiler.github.io/storeFront/" target ="_blank" id="storefront">
                         <img src="./assets/storefront.png" height="300"></a>
                         <p>Created a store front website selling pokemon plushies</p>
-
+                    <h2>College Soccer Website</h2>
                     <a href="http://www.ballstatemenssoccer.com/" target ="_blank" id="ballstateSoccer">
                         <img src="./assets/ballstateSoccer.png" height="300"></a>
                         <p>Created an informative and interactive website for the 
@@ -166,8 +175,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-3">
-                    <p>Mason Seiler</p>
-                    <p>masonseiler1@gmail.com</p>
+                    
                 </div>
                 <div class="col-sm-6">
                         <form id="contact-form" method="post" action="https://formspree.io/masonseiler1@gmail.com">
