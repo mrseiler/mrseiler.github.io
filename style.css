@@ -79,6 +79,7 @@
     background-color: #FB6542;
     color: black;
     padding-bottom: 30px;
+    padding-top: 40px;
 }
 
 #about h1 {
@@ -106,10 +107,18 @@
 }
 #profile h1 {
     text-align: center;
+    padding-top: 40px;
+}
+#profile p {
+    font-size: 16px;
 }
 #profile li {
     display: inline-block;
     padding-right: 10px;
+}
+#profile a {
+    color: #375E97;
+    text-decoration: none;
 }
 
 /*==========================
@@ -118,10 +127,11 @@
 #portfolio {
     background-color: #3F681C;
     color: black;
-    height: 900px;
+    height: 1000px;
 }
 #portfolio h1 {
     text-align: center;
+    padding-top: 40px;
 }
 #portfolio h3 {
     text-align: center;
@@ -150,7 +160,7 @@
 ==========================*/
 #contact {
     background-color: #375E97;
-    padding-bottom: 100px;
+    padding-bottom: 20px;
     color: black;
 }
 #contactBreak {
@@ -163,12 +173,23 @@ form .submit {
     color: black;
 }
 form .submit:hover {
-    background-color:red;
+    background: linear-gradient(132deg, #FB6542, #FFBB00, #3F681C, #375E97);
     color: white;
 }
 #contactInfo {
     position: absolute;
     display: inline-block;
+}
+#contact ul {
+    align-content: center;
+}
+#contact li {
+    display: inline-block;
+    margin-top: 20px;
+    margin-right: 40px;
+}
+#contact li:hover {
+    opacity: .6;
 }
 /*========================
 ----------FOOTER---------
