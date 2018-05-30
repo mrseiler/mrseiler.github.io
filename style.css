@@ -23,6 +23,9 @@
 	font-size: 0.5em;
 	font-weight: 200;
 }
+#socialMedia li {
+    display: inline-block;
+}
 .anchor {
     display: block;
     position: absolute;
